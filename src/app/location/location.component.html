@@ -1,0 +1,22 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<div class = "container mt-5">
+  <h2 class = "center">{{name}}</h2>
+  <p class ="center">{{type}}</p>
+  <hr>
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Residentes...</h4>
+          <div *ngFor="let character of residentes">
+              <a href="detail/{{character.character_id}}">
+                <img  width="150" height="150" class="rounded-circle float-left" [src]="character.image" />
+              </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

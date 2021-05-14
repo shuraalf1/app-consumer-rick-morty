@@ -1,0 +1,55 @@
+<div class="d-flex" id="wrapper">
+  <!-- Sidebar -->
+  <div class="bg-light border-right" id="sidebar-wrapper">
+    <div class="sidebar-heading">
+      <ul class="pagination pagination-sm justify-content-end">
+        <li class="page-item" (click)="previus($event)">
+          <span class="page-link" aria-hidden="true">&laquo;</span>
+        </li>
+        <li class="page-item" [ngClass]="{'active': currentPage ===(i+1)}" *ngFor="let page of pages;let i = index" (click)="search($event, i)">
+          <span class="page-link" *ngIf="i >= pagemin && i< pagemax">{{i + 1}}</span>
+        </li>
+        <li class="page-item">
+          <span class="page-link" aria-hidden="true"  (click)="next($event)">&raquo;</span>
+        </li>
+      </ul>
+    </div>
+    <div class="list-group list-group-flush ">
+      <!--<a href="/detail/{{character.id}}" class="list-group-item list-group-item-action bg-light"  *ngFor="let character of characters">-->
+      <a class="list-group-item list-group-item-action bg-light"  *ngFor="let character of characters" (click)="detail($event,character.id )">
+        <div class="row header-list">
+          <div class="col-12">
+            <div><h6>{{character.name}}</h6></div>
+          </div>
+        </div>
+        <div class="row body-list">
+            <div class="col-6 ">
+              <div >{{character.species}}</div>
+              <div >{{character.status}}</div>
+            </div>
+            <div class="col-6">
+              <img  [src]="character.image" class=" w-100 img-rounded" alt="Cinque Terre">
+            </div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <!-- /#sidebar-wrapper -->
+  <!-- Page Content -->
+  <div id="page-content-wrapper">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+      <button class="btn btn-info  text-white" id="menu-toggle">
+        Lista
+      </button>
+    </nav>
+    <div class="container-fluid">
+        <app-character-detail [characterDetail] = "currentCharacter"></app-character-detail>
+        <!--<router-outlet></router-outlet>-->
+    </div>
+  </div>
+  <!-- /#page-content-wrapper -->
+</div>
+<!-- /#wrapper -->
+
+
+
