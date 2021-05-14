@@ -5,15 +5,11 @@ import { AppComponent } from './app.component';
 import {FormsModule} from "@angular/forms"
 import { HttpClientModule } from '@angular/common/http';
 import { CharacterDetailComponent } from './character-detail/character-detail.component';
-import { CharacterComponent } from './character/character.component';
-import { LocationComponent } from './location/location.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CharacterDetailComponent,
-    CharacterComponent,
-    LocationComponent
   ],
   imports: [
     BrowserModule,
