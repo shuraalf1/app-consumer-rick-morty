@@ -35,7 +35,7 @@ export class AppComponent {
                                { title: "Unknown", value: 'unknown' },
                                ]
       public currentCharacter: any = {episode: [],
-                                      location:{ name:''}};
+                                      origin:{ name:''}};
 
 constructor(private characterService : PersonajeService) {}
     ngOnInit() {
