@@ -13,6 +13,36 @@
           <span class="page-link" aria-hidden="true"  (click)="next($event)">&raquo;</span>
         </li>
       </ul>
+      <div class="row">
+        <div class="col-4">
+          <h6 >Name: </h6>
+        </div>
+        <div class="col-8">
+          <input id="inpname" type="search" class="form-control form-control-sm" [(ngModel)]="searchName" placeholder="Search..." (keyup)="search($event, 0)" >
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <h6 >Status: </h6>
+        </div>
+        <div class="col-8">
+      <select id="selectStatus" (change)="onChange($event.target.value)" class="form-control form-control-sm" [(ngModel)]="searchStatus">
+        <option *ngFor="let stls of statusList" [value]="stls.value">{{stls.title}}</option>
+      </select>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-4">
+          <h6 >Especies: </h6>
+        </div>
+        <div class="col-8">
+        <select id="selectSpecie" (change)="onChangeSpecie($event.target.value)" class="form-control form-control-sm" [(ngModel)]="searchSpecie">
+          <option *ngFor="let spls of specieList" [value]="spls.value">{{spls.title}}</option>
+        </select>
+        </div>
+      </div>
     </div>
     <div class="list-group list-group-flush ">
       <!--<a href="/detail/{{character.id}}" class="list-group-item list-group-item-action bg-light"  *ngFor="let character of characters">-->
